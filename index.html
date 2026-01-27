@@ -3,45 +3,127 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Funciones Jurisdiccionales SIC</title>
+    <title>SIC - Funciones Jurisdiccionales</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#1a365d',
-                            accent: '#3b82f6',
-                            bg: '#f8fafc'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
-        .dark .glass { background: rgba(15, 23, 42, 0.8); }
     </style>
 </head>
-<body class="bg-[#f1f5f9] dark:bg-slate-950 transition-colors duration-500 min-h-screen">
+<body class="bg-slate-50 text-slate-900 transition-colors duration-500 min-h-screen">
 
-    <header class="glass sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg">
+    <header class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200">
                     <i class="fa-solid fa-scale-balanced text-white text-xl"></i>
                 </div>
                 <div>
-                    <h2 class="text-slate-900 dark:text-white font-extrabold text-sm tracking-tight leading-none">SUPERINTENDENCIA</h2>
-                    <p class="text-blue-600 dark:text-blue-400 text-[10px] font-bold tracking-[0.2em] mt-1 uppercase">Rad. 24-249034</p>
+                    <h2 class="text-slate-900 font-extrabold text-sm tracking-tight leading-none uppercase">Superintendencia</h2>
+                    <p class="text-blue-600 text-[10px] font-bold tracking-widest mt-1 uppercase">Rad. 24-249034</p>
                 </div>
             </div>
 
-            <nav class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                <button onclick="nave
+            <nav class="hidden md:flex items-center gap-6 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                <button onclick="navegar('inicio')" class="hover:text-blue-600 transition">Resumen</button>
+                <button onclick="navegar('naturaleza')" class="hover:text-blue-600 transition">Mecanismo</button>
+                <button onclick="navegar('organizacion')" class="hover:text-blue-600 transition">Estructura</button>
+                <button onclick="navegar('normas')" class="hover:text-blue-600 transition">Recursos</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-12 px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-widest">
+                    Delegatura para Asuntos Jurisdiccionales
+                </span>
+                <h1 id="main-title" class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tighter leading-tight">
+                    Transparencia en el <span class="text-blue-600">crédito.</span>
+                </h1>
+                <p id="content-box" class="text-lg text-slate-600 leading-relaxed font-light">
+                    La SIC como juez a prevención decide los conflictos derivados de la vulneración a los derechos de los consumidores (Ley 1480 de 2011).
+                </p>
+                
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="https://www.sic.gov.co/tema/asuntos-jurisdiccionales/sitio-para-las-partes" target="_blank" class="bg-slate-900 text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-600 transition shadow-xl">
+                        Sitio para las partes <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="data-cards" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-100 mt-20 py-10 text-center">
+        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">
+            Todos los derechos reservados SILVIA CRISTINA HOYOS GOMEZ.
+        </p>
+    </footer>
+
+    <script>
+        const secciones = {
+            'inicio': {
+                tit: "Protección al <span class='text-blue-600 text-6xl block'>consumidor.</span>",
+                txt: "La SIC como juez a prevención decide los conflictos derivados de la vulneración a los derechos de los consumidores, actos de competencia desleal e infracción de derecho de propiedad industrial.",
+                cards: [
+                    { l: "Ley Principal", v: "1480 de 2011", d: "Estatuto del Consumidor" },
+                    { l: "Función", v: "Juez a Prevención", d: "Facultades jurisdiccionales" },
+                    { l: "Competencia", v: "Ley 256 de 1996", d: "Actos de competencia desleal" },
+                    { l: "Materia", v: "Industrial", d: "Propiedad Industrial" }
+                ]
+            },
+            'naturaleza': {
+                tit: "Mecanismo <span class='text-blue-600 text-6xl block'>Judicial.</span>",
+                txt: "Los procesos se adelantan bajo el rigor del Código General del Proceso, garantizando independencia de sus funciones administrativas ordinarias.",
+                cards: [
+                    { l: "Marco Legal", v: "CGP", d: "Código General del Proceso" },
+                    { l: "Carácter", v: "Judicial", d: "Trámite independiente" }
+                ]
+            },
+            'organizacion': {
+                tit: "Estructura de <span class='text-blue-600 text-6xl block'>Delegatura.</span>",
+                txt: "Estructurada en áreas especializadas para garantizar la defensa efectiva de los derechos.",
+                cards: [
+                    { l: "Consumo", v: "Defensa", d: "Grupo de Calificación y Defensa" },
+                    { l: "Mercado", v: "Propiedad", d: "Competencia Desleal" }
+                ]
+            },
+            'normas': {
+                tit: "Recursos <span class='text-blue-600 text-6xl block'>Legales.</span>",
+                txt: "Normatividad aplicable en materia de consumo y servicios.",
+                cards: [
+                    { l: "Decreto", v: "1074 / 2014", d: "Decreto Reglamentario" },
+                    { l: "Postales", v: "Ley 1369", d: "Ley de 2009" }
+                ]
+            }
+        };
+
+        function navegar(id) {
+            const data = secciones[id];
+            document.getElementById('main-title').innerHTML = data.tit;
+            document.getElementById('content-box').innerText = data.txt;
+            
+            const grid = document.getElementById('data-cards');
+            grid.innerHTML = '';
+            data.cards.forEach(c => {
+                grid.innerHTML += `
+                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">${c.l}</p>
+                        <h4 class="text-xl font-extrabold text-slate-900">${c.v}</h4>
+                        <p class="text-xs text-slate-500 mt-1">${c.d}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Cargar inicio al abrir
+        navegar('inicio');
+    </script>
+</body>
+</html>
