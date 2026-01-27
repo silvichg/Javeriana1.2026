@@ -3,28 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Micrositio Javeriana</title>
+    <title>Funciones Jurisdiccionales SIC</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f4f8; }
-        #card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 400px; }
-        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px; }
-        button:hover { background-color: #0056b3; }
+        /* Estética Profesional: Azules, Grises y Blancos */
+        body { 
+            background: linear-gradient(135deg, #0a1f33 0%, #1e3c72 50%, #bdc3c7 100%);
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            color: #2f3640;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 90%;
+            border-top: 10px solid #0a1f33;
+            text-align: center;
+        }
+
+        h1 { color: #0a1f33; font-size: 1.7rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .content-box {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #2f3542;
+            margin-bottom: 30px;
+            text-align: justify;
+            background: #f1f2f6;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 6px solid #1e3c72;
+        }
+
+        .menu-botones { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+        }
+
+        button {
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #0a1f33;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .highlight { color: #1e3c72; font-weight: bold; }
+        
+        .list-item { margin-bottom: 10px; display: block; }
+
+        .btn-full { grid-column: span 2; background-color: #576574; }
     </style>
 </head>
 <body>
-    <div id="card">
-        <h1 id="titulo">¡Hola!</h1>
-        <p id="texto">Este es el inicio de tu nuevo micrositio 2026.</p>
-        <div id="botones">
-            <button onclick="cambiar()">Púlsame</button>
+
+    <div class="container">
+        <h1 id="title">Funciones Jurisdiccionales SIC</h1>
+        
+        <div id="content-area" class="content-box">
+            La SIC como <b>juez a prevención</b> decide los conflictos derivados de la vulneración a los derechos de los consumidores (Ley 1480 de 2011), actos de competencia desleal (Ley 256 de 1996) e infracción de derecho de propiedad industrial.
         </div>
+
+        <div id="button-area" class="menu-botones">
+            </div>
     </div>
 
     <script>
-        function cambiar() {
-            document.getElementById('titulo').innerText = "¡Funciona!";
-            document.getElementById('texto').innerText = "Ya has creado tu primera página interactiva.";
+        const info = {
+            'inicio': {
+                tit: "Funciones Jurisdiccionales SIC",
+                txt: "La SIC como <b>juez a prevención</b> decide los conflictos derivados de la vulneración a los derechos de los consumidores (Ley 1480 de 2011), actos de competencia desleal (Ley 256 de 1996) e infracción de derecho de propiedad industrial.",
+                btns: [
+                    { n: "Naturaleza del Juez", d: "naturaleza" },
+                    { n: "Organización Delegatura", d: "organizacion" },
+                    { n: "Normatividad Consumo", d: "normas" },
+                    { n: "Decretos y Resoluciones", d: "decretos" }
+                ]
+            },
+            'naturaleza': {
+                tit: "Naturaleza Jurisdiccional",
+                txt: "En su calidad de <b>juez a prevención</b>, la SIC ejerce facultades estrictamente <span class='highlight'>jurisdiccionales</span>. Esto implica que los procesos se adelantan bajo el rigor del Código General del Proceso, garantizando el trámite de acciones de carácter judicial e independiente de sus funciones administrativas ordinarias.",
+                btns: [{ n: "Volver al Menú", d: "inicio" }]
+            },
+            'organizacion': {
+                tit: "Organización de la Delegatura",
+                txt: "Estructurada en tres áreas especializadas: <br><br>• <span class='highlight'>Consumo:</span> Funciones ejercidas por el <b>Grupo de Calificación</b> y el <b>Grupo de Defensa del Consumidor</b>. <br><br>• <span class='highlight'>Mercado:</span> Procesos atendidos por el <b>Grupo de Competencia Desleal y Propiedad Industrial</b>.",
+                btns: [{ n: "Volver al Menú", d: "inicio" }]
+            },
+            'normas': {
+                tit: "Normatividad en Consumo",
+                txt: "Marco legal principal: <br><br>• <b>Ley 1480 de 2011:</b> Estatuto del Consumidor. <br>• <b>Ley 1369 de 2009:</b> Régimen de servicios postales. <br>• <b>Resoluciones CRC:</b> Sobre servicios de telecomunicaciones fijos y móviles.",
+                btns: [{ n: "Volver al Menú", d: "inicio" }]
+            },
+            'decretos': {
+                tit: "Decretos Reglamentarios",
+                txt: "Principales Decretos en materia de consumo: <br><br>• Decreto 1074 de 2014 <br>• Decreto 1368 de 2014 <br>• Decreto 1499 de 2014",
+                btns: [{ n: "Volver al Menú", d: "inicio" }]
+            }
+        };
+
+        function navegar(id) {
+            const nodo = info[id];
+            document.getElementById('title').innerText = nodo.tit;
+            document.getElementById('content-area').innerHTML = nodo.txt;
+            
+            const area = document.getElementById('button-area');
+            area.innerHTML = '';
+            
+            nodo.btns.forEach(b => {
+                const btn = document.createElement('button');
+                btn.innerText = b.n;
+                if(id !== 'inicio') btn.className = 'btn-full';
+                btn.onclick = () => navegar(b.d);
+                area.appendChild(btn);
+            });
         }
+
+        navegar('inicio');
     </script>
 </body>
 </html>
