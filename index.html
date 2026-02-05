@@ -3,35 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SIC - Superintendencia de Industria y Comercio</title>
+    <title>SIC - Delegatura de Asuntos Jurisdiccionales</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-        }
+        tailwind.config = { darkMode: 'class' }
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease; }
-        
         .text-gradient {
             background: linear-gradient(to right, #1e3a8a, #2563eb, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
         .dark .text-gradient {
             background: linear-gradient(to right, #60a5fa, #93c5fd, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
-        .bg-gradient-sic {
-            background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%);
-        }
-
-        #main-content { transition: opacity 0.4s ease-in-out; }
+        #main-content { transition: opacity 0.3s ease-in-out; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
@@ -39,96 +28,102 @@
     <header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-sic flex items-center justify-center shadow-lg shrink-0">
-                    <i class="fa-solid fa-scale-balanced text-white text-xl"></i>
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg">
+                    <i class="fa-solid fa-scale-balanced"></i>
                 </div>
-                <h2 class="text-slate-900 dark:text-white font-extrabold text-sm tracking-tight uppercase leading-none">Superintendencia de Industria y Comercio</h2>
+                <h2 class="font-extrabold text-[10px] uppercase tracking-tighter leading-tight">Delegatura para<br><span class="text-blue-600">Asuntos Jurisdiccionales</span></h2>
             </div>
 
-            <nav class="hidden lg:flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+            <nav class="hidden lg:flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
                 <button onclick="navegar('inicio')" class="hover:text-blue-600 transition">Inicio</button>
                 <button onclick="navegar('organizacion')" class="hover:text-blue-600 transition">Estructura</button>
-                <button onclick="navegar('g_defensa')" class="hover:text-blue-600 transition">Defensa</button>
+                <button onclick="navegar('g_competencia')" class="hover:text-blue-600 transition">G. Competencia</button>
+                <button onclick="navegar('g_defensa')" class="hover:text-blue-600 transition">G. Defensa</button>
                 <button onclick="navegar('relatoria')" class="hover:text-blue-600 transition">Relatoría</button>
-                <button onclick="navegar('recursos')" class="hover:text-blue-600 transition text-blue-600 dark:text-blue-400">Recursos</button>
+                <button onclick="navegar('recursos')" class="hover:text-blue-600 transition">Recursos</button>
                 
-                <button type="button" onclick="toggleTheme()" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 transition border border-slate-200 dark:border-slate-700">
-                    <i class="fa-solid fa-sun h-4 w-4 hidden dark:block"></i>
-                    <i class="fa-solid fa-moon h-4 w-4 block dark:hidden"></i>
-                    <span>Tema</span>
+                <button type="button" onclick="toggleTheme()" class="ml-4 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto py-16 px-6 w-full flex-grow">
-        <div id="main-content" class="grid lg:grid-cols-2 gap-16 items-center">
+    <main class="max-w-7xl mx-auto py-12 px-6 w-full flex-grow">
+        <div id="main-content" class="grid lg:grid-cols-2 gap-12 items-start">
             
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-[11px] font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-folder-open"></i> Gestión Procesal
-                </div>
-
-                <h1 id="main-title" class="text-6xl lg:text-7xl font-extrabold tracking-tighter leading-tight text-gradient">
-                    </h1>
-
-                <p id="content-box" class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-light italic">
-                    </p>
-
-                <div id="tags-area" class="flex flex-wrap gap-2">
-                    </div>
+            <div class="space-y-6">
+                <h1 id="main-title" class="text-5xl lg:text-6xl font-extrabold tracking-tighter text-gradient leading-[1.1]"></h1>
+                <p id="content-box" class="text-lg text-slate-500 dark:text-slate-400 font-light italic leading-relaxed"></p>
+                <div id="tags-area" class="flex flex-wrap gap-2"></div>
             </div>
 
-            <div id="display-area" class="w-full">
+            <div id="display-area" class="w-full bg-slate-50/50 dark:bg-slate-900/30 rounded-[40px] p-8 border border-slate-100 dark:border-slate-800">
                 </div>
         </div>
     </main>
 
-    <footer class="border-t border-slate-100 dark:border-slate-900 py-10 text-center">
-        <p class="text-[9px] text-slate-500 font-medium">Todos los derechos reservados SILVIA CRISTINA HOYOS GOMEZ | 2026</p>
+    <footer class="py-10 text-center border-t border-slate-50 dark:border-slate-900">
+        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.4em]">
+            SILVIA CRISTINA HOYOS GOMEZ | 2026
+        </p>
     </footer>
 
     <script>
         function toggleTheme() { document.documentElement.classList.toggle('dark'); }
 
         const secciones = {
-            'recursos': {
-                tit: "Recursos para <br><span class='text-blue-600'>las Partes.</span>",
-                txt: "Herramientas de gestión judicial y canales oficiales para la interacción procesal con la Delegatura.",
-                tags: ['Memoriales', 'Sitio Partes', 'Gestión Online'],
+            'inicio': {
+                tit: "Delegatura para <br>Asuntos Jurisdiccionales.",
+                txt: "La SIC como juez a prevención decide los conflictos derivados de la vulneración a los derechos de los consumidores, actos de competencia desleal e infracción de propiedad industrial.",
+                tags: ['Justicia Especializada', 'Transparencia', 'Eficacia'],
+                cards: [{ l: "CAPITAL", v: "$75.616.037" }, { l: "APROBADO", v: "$120.098.400" }]
+            },
+            'organizacion': {
+                tit: "Estructura de la <br>Delegatura.",
+                txt: "Organización jerárquica de los grupos especializados en la administración de justicia.",
+                tags: ['Jerarquía', 'Estructura SIC'],
+                type: 'graph'
+            },
+            'g_competencia': {
+                tit: "Competencia Desleal y <br>Propiedad Industrial.",
+                txt: "Este Grupo tiene como funciones principales tramitar las acciones judiciales (preventivas, declarativas y de condena) por actos de competencia desleal, así como conocer los procesos por infracción de derechos de Propiedad Industrial. Los procesos deben adelantarse a través de abogados y se surten a través del proceso verbal.",
+                tags: ['Ley 256 de 1996', 'Decisión 486'],
                 cards: [
-                    { 
-                        l: "PORTAL JUDICIAL", 
-                        v: "Sitio para las Partes", 
-                        d: "Acceso a expedientes y herramientas", 
-                        link: "https://www.sic.gov.co/tema/asuntos-jurisdiccionales/sitio-para-las-partes" 
-                    },
-                    { 
-                        l: "OFICINA VIRTUAL", 
-                        v: "Radicación", 
-                        d: "Envío de memoriales y documentos", 
-                        link: "https://servicioslinea.sic.gov.co/servilinea/pqrsf/" 
-                    }
+                    { l: "NORMA", v: "Ley 256 / 96", d: "Competencia Desleal" },
+                    { l: "NORMA", v: "Decisión 486", d: "Propiedad Industrial" }
+                ]
+            },
+            'g_defensa': {
+                tit: "Defensa del <br>Consumidor.",
+                txt: "Juez a prevención en materia de consumo, a través de la acción de protección al consumidor tramitados mediante procesos verbales sumarios (mínima cuantía) procesos verbales (menor y mayor cuantía). Con competencia restringida para reconocer perjuicios.",
+                tags: ['Ley 1480 de 2011', 'Verbal Sumario'],
+                cards: [
+                    { l: "ESTATUTO", v: "Ley 1480", d: "Protección al Consumidor" }
                 ]
             },
             'relatoria': {
-                tit: "Relatoría de la <br><span class='text-blue-600'>Delegatura.</span>",
+                tit: "Relatoría de la <br>Delegatura.",
                 txt: "Consulta de providencias y sentencias emitidas por la Delegatura.",
-                tags: ['Jurisprudencia', 'Sentencias'],
+                tags: ['Jurisprudencia', 'Buscador'],
                 cards: [
                     { l: "BASE DE DATOS", v: "Consulta", d: "Buscador Judicial de Relatorías", link: "https://sedeelectronica.sic.gov.co/atencion-y-servicios-a-la-ciudadania/servicios/buscador-de-relatorias" }
                 ]
             },
-            'inicio': {
-                tit: "Delegatura para <br>Asuntos <span class='text-blue-600'>Jurisdiccionales.</span>",
-                txt: "Las facultades jurisdiccionales de la SIC para decidir conflictos de consumo, competencia desleal y propiedad industrial.",
-                tags: ['Justicia Especializada'],
-                type: 'stats'
+            'recursos': {
+                tit: "Recursos para <br>las Partes.",
+                txt: "Canales oficiales para la interacción procesal y radicación de documentos.",
+                tags: ['Memoriales', 'Sitio Partes'],
+                cards: [
+                    { l: "PORTAL", v: "Sitio para Partes", d: "Acceso a expedientes", link: "https://www.sic.gov.co/tema/asuntos-jurisdiccionales/sitio-para-las-partes" },
+                    { l: "OFICINA VIRTUAL", v: "Radicación", d: "Envío de memoriales", link: "https://servicioslinea.sic.gov.co/servilinea/pqrsf/" }
+                ]
             }
         };
 
         function navegar(id) {
-            const data = secciones[id] || secciones['inicio'];
+            const data = secciones[id];
             const displayArea = document.getElementById('display-area');
             const mainContent = document.getElementById('main-content');
             
@@ -141,27 +136,56 @@
                 const tagsArea = document.getElementById('tags-area');
                 tagsArea.innerHTML = '';
                 data.tags.forEach(t => {
-                    tagsArea.innerHTML += `<span class="px-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase italic"># ${t}</span>`;
+                    tagsArea.innerHTML += `<span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[9px] font-bold uppercase rounded-md"># ${t}</span>`;
                 });
 
-                displayArea.innerHTML = '';
-                if (data.cards) {
-                    displayArea.className = "grid grid-cols-1 gap-4";
+                if (data.type === 'graph') {
+                    displayArea.innerHTML = `
+                    <div class="flex flex-col items-center gap-6 py-4">
+                        <div class="bg-slate-900 dark:bg-blue-700 text-white p-4 rounded-xl text-center w-60 shadow-lg border-2 border-white dark:border-slate-800">
+                            <p class="text-[10px] font-black uppercase tracking-widest">Delegatura Asuntos Jurisdiccionales</p>
+                        </div>
+                        <div class="w-px h-6 bg-slate-300 dark:bg-slate-700"></div>
+                        <div class="grid grid-cols-2 gap-8 w-full">
+                            <div class="flex flex-col items-center">
+                                <div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 w-full text-center shadow-sm">
+                                    <p class="text-[9px] font-bold">COMPETENCIA DESLEAL Y PI</p>
+                                </div>
+                                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                                <div class="bg-slate-50 dark:bg-slate-900/50 p-2 rounded-md border border-slate-100 dark:border-slate-800 w-32 text-center">
+                                    <p class="text-[8px] text-slate-500">Secretaría (CD/PI)</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 w-full text-center shadow-sm">
+                                    <p class="text-[9px] font-bold">DERECHO DEL CONSUMIDOR</p>
+                                </div>
+                                <div class="w-px h-4 bg-slate-300 dark:border-slate-700"></div>
+                                <div class="grid grid-cols-3 gap-1 w-full">
+                                    <div class="bg-slate-100 dark:bg-slate-800 p-1 rounded text-[7px] text-center uppercase font-bold">Calificación</div>
+                                    <div class="bg-blue-600 text-white p-1 rounded text-[7px] text-center uppercase font-bold shadow">Defensa</div>
+                                    <div class="bg-slate-100 dark:bg-slate-800 p-1 rounded text-[7px] text-center uppercase font-bold">Secretaría</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                } else {
+                    displayArea.innerHTML = '';
                     data.cards.forEach(c => {
                         const cardHtml = `
-                            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
-                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">${c.l}</p>
-                                <h4 class="text-3xl font-extrabold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">${c.v}</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">${c.d}</p>
-                            </div>`;
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-100 dark:border-slate-800 mb-4 hover:border-blue-300 transition-all cursor-pointer">
+                            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">${c.l}</p>
+                            <h4 class="text-2xl font-black text-slate-800 dark:text-white">${c.v}</h4>
+                            ${c.d ? `<p class="text-xs text-slate-500 mt-1">${c.d}</p>` : ''}
+                        </div>`;
                         displayArea.innerHTML += c.link ? `<a href="${c.link}" target="_blank">${cardHtml}</a>` : cardHtml;
                     });
                 }
                 mainContent.style.opacity = '1';
-            }, 200);
+            }, 100);
         }
 
-        navegar('recursos');
+        navegar('organizacion'); // Inicia con el gráfico visible
     </script>
 </body>
 </html>
