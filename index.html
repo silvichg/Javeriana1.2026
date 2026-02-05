@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SIC - Delegatura para Asuntos Jurisdiccionales</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
         
         .text-gradient {
             background: linear-gradient(to right, #0f172a, #1e40af, #2563eb);
@@ -25,10 +27,10 @@
 </head>
 <body class="bg-white text-slate-900 min-h-screen flex flex-col">
 
-    <header class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm">
+    <header class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm w-full">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-sic flex items-center justify-center shadow-lg">
+                <div class="w-10 h-10 rounded-full bg-gradient-sic flex items-center justify-center shadow-lg shrink-0">
                     <i class="fa-solid fa-scale-balanced text-white"></i>
                 </div>
                 <div>
@@ -49,7 +51,7 @@
         </div>
     </header>
 
-    <main class="flex-grow max-w-6xl mx-auto py-16 px-6 w-full">
+    <main class="flex-grow max-w-7xl mx-auto py-12 px-6 w-full">
         <div id="main-content" class="grid lg:grid-cols-2 gap-12 items-start">
             
             <div class="space-y-8">
@@ -83,12 +85,10 @@
         </div>
     </main>
 
-    <footer class="border-t border-slate-100 py-8 bg-slate-50/50">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
-                Superintendencia de Industria y Comercio | 2026
-            </p>
-        </div>
+    <footer class="border-t border-slate-100 py-8 bg-slate-50/50 w-full mt-auto text-center">
+        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
+            Superintendencia de Industria y Comercio | 2026
+        </p>
     </footer>
 
     <script>
@@ -113,12 +113,34 @@
                     { l: "Portal Oficial", v: "Visualización Jueces", d: "Sede Electrónica SIC", link: "https://sedeelectronica.sic.gov.co/temas/asuntos-jurisdiccionales/visualizacion-jueces" }
                 ]
             },
+            'competencia': {
+                tit: "G. Competencia <br><span class='text-blue-600'>Desleal y PI.</span>",
+                txt: "Encargados de procesos por actos de competencia desleal y protección de la propiedad industrial.",
+                cards: [
+                    { l: "Norma", v: "Ley 256 / 96", d: "Competencia Desleal" },
+                    { l: "Procesos", v: "Propiedad Ind.", d: "Marcas y Patentes" }
+                ]
+            },
+            'defensa': {
+                tit: "G. Defensa del <br><span class='text-blue-600'>Consumidor.</span>",
+                txt: "Atención de demandas judiciales relacionadas con la protección contractual y garantías.",
+                cards: [
+                    { l: "Área", v: "Consumo", d: "Demandas Judiciales" }
+                ]
+            },
+            'relatoria': {
+                tit: "Relatoría <br><span class='text-blue-600'>SIC.</span>",
+                txt: "Consulta de providencias y sentencias emitidas por los despachos de la Delegatura.",
+                cards: [
+                    { l: "Base Datos", v: "Sentencias", d: "Buscador Judicial" }
+                ]
+            },
             'normas': {
                 tit: "Recursos <br><span class='text-blue-600'>Normativos.</span>",
-                txt: "Compilado de leyes y decretos que rigen la función jurisdiccional de la entidad.",
+                txt: "Leyes y reglamentos que fundamentan el ejercicio de la función judicial en la SIC.",
                 cards: [
-                    { l: "Decreto 1074", v: "Reglamentario", d: "Sector Comercio e Industria" },
-                    { l: "Código", v: "CGP", d: "Procesos Judiciales" }
+                    { l: "Decreto 1074", v: "Reglamentario", d: "Sector Comercio" },
+                    { l: "Código", v: "CGP", d: "General del Proceso" }
                 ]
             }
         };
@@ -136,24 +158,24 @@
                 displayArea.innerHTML = '';
 
                 if (data.isChart) {
-                    displayArea.className = "col-span-full";
+                    displayArea.className = "col-span-1 lg:col-span-1 w-full";
                     displayArea.innerHTML = `
-                        <div class="bg-slate-50 p-8 rounded-[40px] border border-slate-200 shadow-inner flex flex-col items-center gap-6">
-                            <div class="bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-xl text-center border-b-4 border-blue-600">
-                                <p class="text-[9px] font-bold uppercase tracking-widest opacity-60">Delegatura de</p>
-                                <p class="text-sm font-black">Asuntos Jurisdiccionales</p>
+                        <div class="bg-slate-50 p-6 rounded-[32px] border border-slate-200 shadow-inner flex flex-col items-center gap-6">
+                            <div class="bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-xl text-center border-b-4 border-blue-600 w-full max-w-xs">
+                                <p class="text-[9px] font-bold uppercase tracking-widest opacity-60 leading-none mb-1">Delegatura de</p>
+                                <p class="text-xs font-black">Asuntos Jurisdiccionales</p>
                             </div>
-                            <div class="grid grid-cols-2 gap-6 w-full max-w-2xl">
-                                <div class="bg-white p-5 rounded-3xl border-2 border-blue-100 shadow-sm text-center">
-                                    <p class="font-bold text-[11px] text-slate-800 uppercase leading-tight">Competencia Desleal y Propiedad Industrial</p>
-                                    <div class="mt-4 text-[9px] font-bold text-blue-600 bg-blue-50 py-2 rounded-lg">SECRETARÍA (CD/PI)</div>
+                            <div class="flex flex-col gap-4 w-full">
+                                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm text-center">
+                                    <p class="font-bold text-[10px] text-slate-800 uppercase leading-tight">Competencia Desleal y PI</p>
+                                    <div class="mt-2 text-[8px] font-bold text-blue-600 bg-blue-50 py-1.5 rounded-lg uppercase">Secretaría (CD/PI)</div>
                                 </div>
-                                <div class="bg-white p-5 rounded-3xl border-2 border-blue-100 shadow-sm text-center">
-                                    <p class="font-bold text-[11px] text-slate-800 uppercase leading-tight">Derecho del Consumidor</p>
-                                    <div class="grid grid-cols-3 gap-1 mt-4">
-                                        <div class="text-[8px] bg-slate-50 p-1 rounded font-bold">CALIFICACIÓN</div>
-                                        <div class="text-[8px] bg-blue-50 p-1 rounded font-bold text-blue-700">DEFENSA</div>
-                                        <div class="text-[8px] bg-slate-50 p-1 rounded font-bold">SECRETARÍA</div>
+                                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm text-center">
+                                    <p class="font-bold text-[10px] text-slate-800 uppercase leading-tight">Derecho del Consumidor</p>
+                                    <div class="grid grid-cols-3 gap-1 mt-2">
+                                        <div class="text-[7px] bg-slate-50 p-1 rounded font-bold uppercase">Calificación</div>
+                                        <div class="text-[7px] bg-blue-50 p-1 rounded font-bold text-blue-700 uppercase">Defensa</div>
+                                        <div class="text-[7px] bg-slate-50 p-1 rounded font-bold uppercase">Secretaría</div>
                                     </div>
                                 </div>
                             </div>
@@ -161,12 +183,15 @@
                 } else {
                     displayArea.className = "grid grid-cols-1 md:grid-cols-2 gap-4";
                     data.cards.forEach(c => {
-                        const card = `<div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
-                            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">${c.l}</p>
-                            <h4 class="text-xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">${c.v}</h4>
-                            <p class="text-xs text-slate-500 mt-1">${c.d}</p>
+                        const card = `
+                        <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all group h-full">
+                            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1 flex items-center gap-1">
+                                ${c.l} ${c.link ? '<i class="fa-solid fa-arrow-up-right-from-square text-blue-500"></i>' : ''}
+                            </p>
+                            <h4 class="text-lg font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">${c.v}</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">${c.d}</p>
                         </div>`;
-                        displayArea.innerHTML += c.link ? `<a href="${c.link}" target="_blank">${card}</a>` : card;
+                        displayArea.innerHTML += c.link ? `<a href="${c.link}" target="_blank" class="block h-full">${card}</a>` : card;
                     });
                 }
                 mainContent.style.opacity = '1';
